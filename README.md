@@ -29,7 +29,8 @@ https://user-images.githubusercontent.com/24854248/173044032-7874cf95-2e41-49fb-
 Which buffer to show in window(s) after its current buffer is removed is decided by the algorithm:
    - If alternate buffer is listed, use it.
    - If previous listed buffer is different, use it.
-   - Otherwise create a scratch one with `nvim_create_buf(true, true)` and use it.
+   - Otherwise use fallback function `config.on_delete_last_fallback(win_id)`.
+   - (Default is to create a scratch one with `nvim_create_buf(true, true)`)
 
 ## Installation
 
